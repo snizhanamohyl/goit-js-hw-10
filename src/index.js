@@ -15,7 +15,7 @@ const refs = {
   countryInfoEl: document.querySelector('.country-info'),
 };
 
-const ENDPOINT = 'https://restcountries.com/v3.1';
+const BASE_URL = 'https://restcountries.com/v3.1';
 const parameterToSearchBy = 'name';
 const filter = 'fields=name,capital,population,flags,languages';
 
@@ -23,7 +23,7 @@ refs.input.addEventListener('input', debounce(onInput, DEBOUNCE_DELAY));
 
 function onInput() {
   const countryToSearch = refs.input.value.trim();
-  const url = `${ENDPOINT}/${parameterToSearchBy}/${countryToSearch}?${filter}`;
+  const url = `${BASE_URL}/${parameterToSearchBy}/${countryToSearch}?${filter}`;
 
   if (!countryToSearch) {
     refs.countryInfoEl.innerHTML = '';
