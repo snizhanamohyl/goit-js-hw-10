@@ -15,7 +15,7 @@ export function createCountryProfileMarkup({
   languages,
   flags,
 }) {
-  return (countryProfileMarkup = `<div class="country-title">
+  return `<div class="country-title">
   <img src="${flags.svg}" alt="flag" height="24px">
       <h1 class="country-name">${name.official}</h1>
       </div>
@@ -27,5 +27,5 @@ export function createCountryProfileMarkup({
         )
           .map(lang => lang)
           .join(', ')}</span></li>
-      </ul>`);
+      </ul>`;
 }
